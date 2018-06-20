@@ -50,7 +50,7 @@ public class BookMapRepository {
 	}
 
 	private void initBookMap() {
-		Book book = new Book("Shantaram", "Gregory David Roberts", "2003");
+		Book book = new Book("Shantaram", "Crime", "2003");
 		bookMap.put(1L, book);
 	}
 
