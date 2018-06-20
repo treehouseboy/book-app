@@ -4,9 +4,9 @@ public interface BookRepository {
 	
 	String getAllBooks();
 
-	String insertBook(String accout);
+	String insertBook(String book);
 
-	String updateBook(Long id, String accountToUpdate);
+	String updateBook(Long id, String bookToUpdate);
 
 	String deleteBook(Long id);
 

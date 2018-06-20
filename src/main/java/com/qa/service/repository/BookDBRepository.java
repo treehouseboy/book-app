@@ -26,19 +26,18 @@ public class BookDBRepository implements BookRepository{
 	private JSONUtil util;
 
 	public String getAllBooks() {
-		Query query = manager.createQuery("Select a FROM Account a");
+		Query query = manager.createQuery("Select a FROM Book a");
 		Collection<Book> books = (Collection<Book>) query.getResultList();
 		return util.getJSONForObject(books);
 	}
 
 	@Transactional(REQUIRED)
 	public String insertBook(String book) {
-		Book anAccount = util.getObjectForJSON(book, Book.class);
-		manager.persist(anAccount);
-		return "{\"message\": \"account has been sucessfully added\"}";
+		Book aBook = util.getObjectForJSON(book, Book.class);
+		manager.persist(aBook);
+		return "{\"message\": \"book has been sucessfully added\"}";
 	}
 
-	@Override
 	@Transactional(REQUIRED)
 	public String updateBook(Long id, String bookToUpdate) {
 		Book updatedBook = util.getObjectForJSON(bookToUpdate, Book.class);
@@ -47,17 +46,16 @@ public class BookDBRepository implements BookRepository{
 			bookFromDB = updatedBook;
 			manager.merge(bookFromDB);
 		}
-		return "{\"message\": \"account sucessfully updated\"}";
+		return "{\"message\": \"book sucessfully updated\"}";
 	}
 
-	@Override
 	@Transactional(REQUIRED)
-	public String deleteAccount(Long id) {
-		Account accountInDB = findAccount(id);
-		if (accountInDB != null) {
-			manager.remove(accountInDB);
+	public String deleteBook(Long id) {
+		Book bookInDB = findBook(id);
+		if (bookInDB != null) {
+			manager.remove(bookInDB);
 		}
-		return "{\"message\": \"account sucessfully deleted\"}";
+		return "{\"message\": \"book sucessfully deleted\"}";
 	}
 
 	private Book findBook(Long id) {
@@ -72,5 +70,4 @@ public class BookDBRepository implements BookRepository{
 		this.util = util;
 	}
 	
-
 }
