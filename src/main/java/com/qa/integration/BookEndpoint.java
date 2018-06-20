@@ -27,14 +27,14 @@ public class BookEndpoint {
 	@Path("/json")
 	@POST
 	@Produces({ "application/json" })
-	public String addAccount(String book) {
+	public String addBook(String book) {
 		return service.addBook(book);
 	}
 
 	@Path("/json/{id}")
 	@PUT
 	@Produces({ "application/json" })
-	public String updateAccount(@PathParam("id") Long id, String book) {
+	public String updateBook(@PathParam("id") Long id, String book) {
 		return service.updateBook(id, book);
 	}
 

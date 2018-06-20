@@ -19,11 +19,15 @@ public class Book {
 	@Size(min = 1, max = 4)
 	private String yearPublished;
 	
+	public Book() {}
+	
+	
 	public Book(String bookTitle, String genre, String yearPublished) {
 		this.bookTitle = bookTitle;
 		this.genre = genre;
 		this.yearPublished = yearPublished;
 	}
+	
 
 	public Long getId() {
 		return id;
