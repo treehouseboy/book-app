@@ -13,6 +13,7 @@
                       };
 
         vm.isHidden = false;
+        vm.editIsHidden = true;
         vm.addIsHidden = true;
 
         vm.hideTable = function()
@@ -23,6 +24,17 @@
         vm.hideAdd = function()
         {
           vm.addIsHidden = !vm.addIsHidden
+        }
+
+        vm.hideEdit = function()
+        {
+          vm.editIsHidden = !vm.editIsHidden
+        }
+
+        vm.hideEditAndReload = function()
+        {
+          vm.editIsHidden = !vm.editIsHidden
+          location.reload();
         }
 
         vm.addBook = function(){
@@ -39,6 +51,12 @@
           $log.log("delete after");
           location.reload();
         };
+
+        vm.editBook = function(){
+          $log.log("edit before");
+          $log.log("edit after");
+          location.reload();
+        }
 
         function init() {
         	bookService.getBooks().then(function (results) {

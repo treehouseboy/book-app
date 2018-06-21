@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -18,7 +19,10 @@ public class Book {
 	private String genre;
 	@Size(min = 1, max = 4)
 	private String yearPublished;
+	@ManyToOne
+	private Author author;
 	
+
 	public Book() {}
 	
 	
@@ -59,6 +63,15 @@ public class Book {
 
 	public void setYearPublished(String yearPublished) {
 		this.yearPublished = yearPublished;
+	}
+	
+	public Author getAuthor() {
+		return author;
+	}
+
+
+	public void setAuthor(Author author) {
+		this.author = author;
 	}
 
 }

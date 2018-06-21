@@ -11,10 +11,20 @@
         			<th>{{'release year' | uppercase}}</th>
         		</tr>
         		<tr ng-repeat="book in bookCtrl.books">
-        			<td>{{book.bookTitle}}</td>
-        			<td>{{book.genre}}</td>
-        			<td>{{book.yearPublished}}</td>
+        			<td ng-show="bookCtrl.editIsHidden">{{book.bookTitle}} </td>
+							<td ng-hide="bookCtrl.editIsHidden"> <input ng-model="book.bookTitle"/></td>
+
+        			<td ng-show="bookCtrl.editIsHidden">{{book.genre}}</td>
+							<td ng-hide="bookCtrl.editIsHidden"> <input  ng-model="book.genre"/></td>
+
+        			<td ng-show="bookCtrl.editIsHidden">{{book.yearPublished}}</td>
+							<td ng-hide="bookCtrl.editIsHidden"> <input ng-model="book.yearPublished"/></td>
+
+
 							<td><button class="btn" ng-click="bookCtrl.deleteBook(book)">Delete</td>
+							<td><button class="btn" ng-show="bookCtrl.editIsHidden" ng-click="bookCtrl.hideEdit()">Edit</button></td>
+							<td><button class="btn" ng-hide="bookCtrl.editIsHidden" ng-click="bookCtrl.hideEditAndReload()">Cancel</button></td>
+							<td><button class="btn" ng-hide="bookCtrl.editIsHidden" ng-click="bookCtrl.editBook()">Confirm</button></td>
         		</tr>
 						<tr ng-hide="bookCtrl.addIsHidden">
 							<td><input ng-model="bookCtrl.bookData.bookTitle"/></td>

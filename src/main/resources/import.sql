@@ -1,3 +1,11 @@
+INSERT INTO AUTHOR (id, name) VALUES (1, 'Gregory David Roberts')
+INSERT INTO AUTHOR (id, name) VALUES (2, 'George Orwell')
+INSERT INTO AUTHOR (id, name) VALUES (3, 'George R. R. Martin')
+INSERT INTO AUTHOR (id, name) VALUES (4, 'J.K. Rowling')
+
 INSERT INTO BOOK (id, bookTitle, genre, yearPublished) VALUES (1, 'Shantaram', 'Crime', '2003')
 INSERT INTO BOOK (id, bookTitle, genre, yearPublished) VALUES (2, '1984', 'Thriller', '1949')
 INSERT INTO BOOK (id, bookTitle, genre, yearPublished) VALUES (3, 'A Game of Thrones', 'Fantasy', '1996')
+INSERT INTO BOOK (id, bookTitle, genre, yearPublished) VALUES (4, 'Harry Potter 1', 'Fantasy', '1997')
+INSERT INTO BOOK (id, bookTitle, genre, yearPublished) VALUES (5, 'Harry Potter 2', 'Fantasy', '1998')
+INSERT INTO BOOK (id, bookTitle, genre, yearPublished) VALUES (6, 'Harry Potter 3', 'Fantasy', '1999')
