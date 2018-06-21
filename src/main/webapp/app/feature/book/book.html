@@ -16,8 +16,17 @@
         			<td>{{book.yearPublished}}</td>
 							<td><button class="btn" ng-click="bookCtrl.deleteBook(book)">Delete</td>
         		</tr>
+						<tr ng-hide="bookCtrl.addIsHidden">
+							<td><input ng-model="bookCtrl.bookData.bookTitle"/></td>
+							<td><input ng-model="bookCtrl.bookData.genre"/></td>
+							<td><input ng-model="bookCtrl.bookData.yearPublished"/></td>
+							<td><button class="btn" ng-click="bookCtrl.addBook()">Confirm</td>
+						</tr>
         	</table>
         </div>
-        <button class="btn"ng-click="bookCtrl.hideTable()">Hide books</button>
+        <button class="btn" ng-hide="bookCtrl.isHidden" ng-click="bookCtrl.hideTable()">Hide books</button>
+				<button class="btn" ng-show="bookCtrl.isHidden" ng-click="bookCtrl.hideTable()">Show books</button>
+				<button class="btn" ng-show="bookCtrl.addIsHidden" ng-click="bookCtrl.hideAdd()">Add book</button>
+				<button class="btn" ng-hide="bookCtrl.addIsHidden" ng-click="bookCtrl.hideAdd()">Cancel</button>
 	</div>
 </div>

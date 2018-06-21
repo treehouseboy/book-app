@@ -15,6 +15,10 @@
           bookDal.deleteBook(bookToDelete);
         };
 
+        this.addBook = function(bookToAdd)
+        {
+          bookDal.saveBook(bookToAdd);
+        };
     }
 
     angular.module("bookApp").service("bookService", ['bookDal', BookService]);
