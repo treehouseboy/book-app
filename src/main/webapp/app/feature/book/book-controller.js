@@ -3,16 +3,17 @@
 (function() {
 
     var BookController =  function(bookService, $log) {
-        
+
     	var vm = this;
-        
+
         vm.isHidden = false;
-        
+
         vm.hideTable = function()
         {
         	vm.isHidden = !vm.isHidden
         };
-        
+
+
         function init() {
         	bookService.getBooks().then(function (results) {
            	vm.books = results;
@@ -23,9 +24,9 @@
                 vm.errorMessage = error;
             });
        }
-       
+
        init();
-            
+
     };
 
     angular.module('bookApp').controller('bookController', ['bookService','$log', BookController]);

@@ -8,12 +8,13 @@
         		<tr>
         			<th>{{'title' | uppercase}}</th>
         			<th>{{'genre' | uppercase}}</th>
-        			<th>{{'Release%Year' | uppercase}}</th>
+        			<th>{{'release year' | uppercase}}</th>
         		</tr>
         		<tr ng-repeat="book in bookCtrl.books">
-        			<td>{{book.title}}</td>
+        			<td>{{book.bookTitle}}</td>
         			<td>{{book.genre}}</td>
         			<td>{{book.yearPublished}}</td>
+							<td><button class="btn" ng-click="bookCtrl.deleteBook(book)">Delete</td>
         		</tr>
         	</table>
         </div>
