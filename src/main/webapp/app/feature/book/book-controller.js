@@ -13,6 +13,13 @@
         	vm.isHidden = !vm.isHidden
         };
 
+        vm.deleteBook = function(book)
+        {
+          $log.log("delete before");
+          bookService.deleteBook(book);
+          $log.log("delete after");
+          init();
+        };
 
         function init() {
         	bookService.getBooks().then(function (results) {
