@@ -24,7 +24,7 @@
 							<td><button class="btn" ng-click="bookCtrl.deleteBook(book)">Delete</td>
 							<td><button class="btn" ng-show="bookCtrl.editIsHidden" ng-click="bookCtrl.hideEdit()">Edit</button></td>
 							<td><button class="btn" ng-hide="bookCtrl.editIsHidden" ng-click="bookCtrl.hideEditAndReload()">Cancel</button></td>
-							<td><button class="btn" ng-hide="bookCtrl.editIsHidden" ng-click="bookCtrl.editBook()">Confirm</button></td>
+							<td><button class="btn" ng-hide="bookCtrl.editIsHidden" ng-click="bookCtrl.editBook(book)">Confirm</button></td>
         		</tr>
 						<tr ng-hide="bookCtrl.addIsHidden">
 							<td><input ng-model="bookCtrl.bookData.bookTitle"/></td>

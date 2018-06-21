@@ -19,6 +19,11 @@
         {
           bookDal.saveBook(bookToAdd);
         };
+
+        this.editBook = function(bookToEdit)
+        {
+          bookDal.updateBook(bookToEdit);
+        };
     }
 
     angular.module("bookApp").service("bookService", ['bookDal', BookService]);

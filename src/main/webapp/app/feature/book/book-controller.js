@@ -52,8 +52,10 @@
           location.reload();
         };
 
-        vm.editBook = function(){
+        vm.editBook = function(book){
           $log.log("edit before");
+          $log.log(book);
+          bookService.editBook(book);
           $log.log("edit after");
           location.reload();
         }

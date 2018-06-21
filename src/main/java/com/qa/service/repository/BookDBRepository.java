@@ -39,9 +39,9 @@ public class BookDBRepository implements BookRepository{
 	}
 
 	@Transactional(REQUIRED)
-	public String updateBook(Long id, String bookToUpdate) {
+	public String updateBook(String bookToUpdate) {
 		Book updatedBook = util.getObjectForJSON(bookToUpdate, Book.class);
-		Book bookFromDB = findBook(id);
+		Book bookFromDB = findBook(updatedBook.getId());
 		if (bookToUpdate != null) {
 			bookFromDB = updatedBook;
 			manager.merge(bookFromDB);

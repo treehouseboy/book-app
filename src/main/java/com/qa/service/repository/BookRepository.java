@@ -6,7 +6,7 @@ public interface BookRepository {
 
 	String insertBook(String book);
 
-	String updateBook(Long id, String bookToUpdate);
+	String updateBook(String bookToUpdate);
 
 	String deleteBook(Long id);
 

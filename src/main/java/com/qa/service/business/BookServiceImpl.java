@@ -22,8 +22,8 @@ public class BookServiceImpl implements BookService {
 		return repo.insertBook(book);
 	}
 
-	public String updateBook(Long id, String book) {
-		return repo.updateBook(id, book);
+	public String updateBook(String book) {
+		return repo.updateBook(book);
 	}
 
 	public String deleteBook(Long id) {
